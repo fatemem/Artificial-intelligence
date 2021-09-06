@@ -1,0 +1,20 @@
+include "alldifferent.mzn";
+var 1..4: a;
+var 1..4: b;
+var 1..4: c;
+var 1..4: d;
+var 1..4: e;
+var 1..4: f;
+var 1..4: g;
+
+constraint a!=b;
+constraint f!=b;
+constraint alldifferent([a,c,d,g]);
+constraint alldifferent([d,e,f]);
+constraint g!=3 /\ g!=4 /\ g!=1;
+constraint e!=3 /\ e!=4 /\ e!=1;
+constraint c!=2 /\ c!=4 /\ c!=1;
+constraint f!=2 /\ f!=1;
+constraint a!=3 /\ a!=2;
+constraint b!=2 /\ b!=1;
+solve satisfy;
